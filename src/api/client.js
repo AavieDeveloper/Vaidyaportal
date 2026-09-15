@@ -255,7 +255,6 @@ try {
 } catch {
   throw new Error("Invalid server response. Please try again.");
 }
-const data = await res.json();
 
 if (res.status === 403 || res.status === 401) {
   const body = await res.json().catch(() => ({}));
