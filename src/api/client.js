@@ -255,6 +255,7 @@ try {
 } catch {
   throw new Error("Invalid server response. Please try again.");
 }
+const data = await res.json();
 
 if (res.status === 403 || res.status === 401) {
   const body = await res.json().catch(() => ({}));
@@ -273,7 +274,6 @@ if (!res.ok) {
   throw new Error(body.message || "Couldn't sign in.");
 }
 
-const data = await res.json();
 localStorage.setItem("aavie_practitioner_token", data.token);
 // Normalize field names
 if (data.vaidya) {
