@@ -415,8 +415,9 @@ export async function getDashboard() {
  * -> Patient[]
  */
 export async function getPatients({ severity, query } = {}) {
-  try {
-    const reviews = await getCachedPendingReviews();
+    try {
+    const reviews = await getCachedPendingReviews().catch(() => []);
+    if (!reviews || !Array.isArray(reviews)) return [];
     if (!Array.isArray(reviews)) return [];
 
     return reviews.map(p => ({
@@ -453,7 +454,20 @@ export async function getPatientDetail(planId) {
         const reviews = await getCachedPendingReviews();
     if (!Array.isArray(reviews)) return mockPatients[0];
     const plan = reviews.find(r => String(r.planId) === String(planId));
-       if (!plan) return mockPatients[0];
+           if (!plan) return {
+      id: planId,
+      planId: Number(planId),
+      initials: "P",
+      name: "Patient",
+      subtitle: "-",
+      vitals: { age: "-", height: "-", weight: "-", bmi: "-" },
+      prakriti: [],
+      vikriti: { agniState: "-", ama: "-", aggravation: null },
+      severity: "-",
+      primaryDriver: "-",
+      activeFlags: [],
+      cycleData: { cycleLength: "-", periodDuration: "-" },
+    };
 
     // Parse full herbs JSON for detailed data
     let herbsJson = {};
@@ -534,11 +548,11 @@ export async function getPatientDetail(planId) {
       reviewStatus: plan.reviewStatus,
 
       // Vitals
-           vitals: {
-        age: plan.patientAge ? `${plan.patientAge}` : "-",
-        height: plan.patientHeight ? `${plan.patientHeight}cm` : "-",
-        weight: plan.patientWeight ? `${plan.patientWeight}kg` : "-",
-        bmi: plan.patientBmi ? `${plan.patientBmi}` : "-",
+             vitals: {
+        age: plan?.patientAge ? `${plan.patientAge}` : "-",
+        height: plan?.patientHeight ? `${plan.patientHeight}cm` : "-",
+        weight: plan?.patientWeight ? `${plan.patientWeight}kg` : "-",
+        bmi: plan?.patientBmi ? `${plan.patientBmi}` : "-",
       },
 
       // Prakriti as dosha array

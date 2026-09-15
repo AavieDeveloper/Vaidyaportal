@@ -34,6 +34,8 @@ export default function PatientDetail() {
 
   if (status === "loading") return <LoadingView label="Loading patient…" />;
   if (status === "error") return <ErrorView onRetry={load} />;
+  if (!data || !data.vitals) return <LoadingView label="Loading patient…" />;
+  
 
   return (
     <>
