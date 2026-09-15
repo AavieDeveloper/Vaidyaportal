@@ -1,0 +1,78 @@
+.callBanner {
+  background: var(--teal-dark);
+  border-radius: var(--radius-card);
+  padding: 14px 16px;
+  margin: 14px 16px 4px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.callBanner__icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.callBanner__txt {
+  color: #fff;
+  font-size: 13px;
+  flex: 1;
+  line-height: 1.4;
+}
+.callBanner__meta {
+  font-size: 11px;
+  opacity: 0.65;
+}
+.callBanner__btn {
+  background: var(--gold-mid);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 13px;
+  font-size: 12px;
+  color: var(--teal-dark);
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.callBanner__btn:hover {
+  filter: brightness(0.96);
+}
+
+.dash__signedRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 0.5px solid var(--border);
+}
+.dash__signedRow:last-child {
+  border-bottom: none;
+}
+.dash__dotGreen {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+
+@media (min-width: 960px) {
+  .callBanner {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 18px 22px;
+  }
+
+  /* On desktop, present pending reviews + recently signed as a
+     two-column layout instead of a single mobile-width stack. */
+  .dashboard__grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+}

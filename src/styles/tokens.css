@@ -1,0 +1,103 @@
+/* ============================================================
+   AAVIE Practitioner Portal — Design Tokens
+   Ported 1:1 from the approved AAVIE Practitioner Portal mock.
+   Do not introduce new colors/type outside this file — every
+   screen pulls from these tokens so the app stays visually
+   consistent as it grows.
+   ============================================================ */
+
+:root {
+  /* Teal (primary) */
+  --teal: #1a7a9a;
+  --teal-dark: #063344;
+  --teal-mid: #0d4e65;
+  --teal-light: #e6f4f8;
+
+  /* Gold (accent) */
+  --gold: #c48a1a;
+  --gold-light: #fdf3dc;
+  --gold-mid: #e8a820;
+
+  /* Neutrals */
+  --ivory: #faf8f4;
+  --ivory-2: #f2efe8;
+  --page-bg: #d0dde2;
+
+  /* Text */
+  --t1: #1a2a30;
+  --t2: #4a6370;
+  --t3: #8aa0a8;
+
+  /* Status */
+  --red: #c84b3a;
+  --red-light: #fef0ed;
+  --green: #1d7a54;
+  --green-light: #e6f5ef;
+
+  --border: #d8e4e8;
+
+  /* Type */
+  --font-serif: "DM Serif Display", Georgia, serif;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Layout */
+  --sidebar-w: 248px;
+  --content-max-w: 1180px;
+  --radius-card: 14px;
+  --radius-pill: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ivory-2);
+  font-family: var(--font-sans);
+  color: var(--t1);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+/* Visible keyboard focus everywhere — accessibility floor */
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 8px;
+}

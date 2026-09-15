@@ -1,0 +1,80 @@
+.patients__searchWrap {
+  padding: 12px 16px 6px;
+}
+.searchBar {
+  background: #fff;
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--t1);
+  width: 100%;
+  outline: none;
+}
+.searchBar:focus {
+  border-color: var(--teal);
+}
+
+.tabRow {
+  display: flex;
+  gap: 0;
+  background: var(--ivory-2);
+  padding: 12px 16px 0;
+  border-bottom: 0.5px solid var(--border);
+  overflow-x: auto;
+}
+.tab {
+  flex: 1;
+  min-width: max-content;
+  text-align: center;
+  padding: 8px 10px;
+  font-size: 11px;
+  color: var(--t3);
+  border: none;
+  background: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.tab--active {
+  color: var(--teal);
+  border-bottom-color: var(--teal);
+  font-weight: 500;
+}
+
+.patients__list {
+  padding: 12px 16px;
+}
+.patients__empty {
+  text-align: center;
+  font-size: 13px;
+  color: var(--t3);
+  padding: 40px 16px;
+}
+
+@media (min-width: 960px) {
+  .patients__searchWrap {
+    padding: 20px 0 12px;
+    max-width: 420px;
+  }
+  .tabRow {
+    padding: 0 0 0;
+    background: transparent;
+    border-bottom: 1px solid var(--border);
+  }
+  .tab {
+    flex: none;
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+  .patients__list {
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    align-content: start;
+  }
+  .patients__list > .card {
+    margin: 0 !important;
+  }
+}

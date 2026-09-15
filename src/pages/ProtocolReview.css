@@ -1,0 +1,119 @@
+.escalationCard {
+  background: var(--red-light);
+  border: 0.5px solid var(--red);
+  border-radius: var(--radius-card);
+  padding: 14px 16px;
+  margin: 0 16px 10px;
+}
+.escalationCard__title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--red);
+  margin-bottom: 3px;
+}
+.escalationCard__body {
+  font-size: 12px;
+  color: #7a2e22;
+  line-height: 1.5;
+}
+.escalationCard__ack {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 0.5px solid rgba(200, 75, 58, 0.25);
+  font-size: 12px;
+  color: #7a2e22;
+  cursor: pointer;
+}
+.escalationCard__ack input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--red);
+  flex-shrink: 0;
+}
+
+.protocol__notes {
+  width: 100%;
+  border: none;
+  font-size: 13px;
+  color: var(--t1);
+  resize: none;
+  background: transparent;
+  outline: none;
+  line-height: 1.6;
+  font-family: inherit;
+}
+
+.signPad {
+  border: 1.5px dashed var(--border);
+  border-radius: 14px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--t3);
+  font-size: 13px;
+  margin: 0 16px 10px;
+  cursor: pointer;
+  background: #fff;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.signPad:hover:not(.signPad--disabled) {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+.signPad--disabled {
+  opacity: 0.45;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.protocol__blockedNote {
+  text-align: center;
+  font-size: 11px;
+  color: var(--red);
+  padding: 0 28px;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+.protocol__footerNote {
+  text-align: center;
+  font-size: 11px;
+  color: var(--t3);
+  padding: 0 28px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+@media (min-width: 960px) {
+  /* Single-column layout — every section full width, stacked
+     cleanly one below the other, constrained to a readable
+     max-width so content doesn't stretch across a wide monitor */
+  .protocol__pageWrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .escalationCard {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* Keep jars stacked vertically — side-by-side caused misaligned
+     empty space on the left half when one jar had fewer herbs */
+  .protocol__jarGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .signPad {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
+  .protocol__blockedNote,
+  .protocol__footerNote {
+    padding: 0;
+    text-align: left;
+  }
+}

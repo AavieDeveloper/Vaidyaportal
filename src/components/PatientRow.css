@@ -1,0 +1,68 @@
+.patRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 0.5px solid var(--border);
+}
+.patRow:last-child {
+  border-bottom: none;
+}
+.patRow--interactive {
+  cursor: pointer;
+}
+.patRow--interactive:hover {
+  background: var(--ivory-2);
+  margin: 0 -8px;
+  padding: 10px 8px;
+  border-radius: 8px;
+}
+.patRow--interactive:focus-visible {
+  outline-offset: -2px;
+}
+
+.patRow__avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--teal-light);
+  color: var(--teal-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.patRow__body {
+  flex: 1;
+  min-width: 0;
+}
+.patRow__name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--t1);
+}
+.patRow__sub {
+  font-size: 11px;
+  color: var(--t3);
+  margin-top: 2px;
+}
+
+.patRow__escalationDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--red);
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.patRow__chev {
+  margin-left: auto;
+  color: var(--t3);
+  font-size: 18px;
+  font-weight: 300;
+  flex-shrink: 0;
+}

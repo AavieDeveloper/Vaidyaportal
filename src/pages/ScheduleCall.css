@@ -1,0 +1,136 @@
+.scheduleCall__hero {
+  background: var(--teal-dark);
+  padding: 14px 20px 18px;
+}
+.scheduleCall__avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--red-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--red);
+  flex-shrink: 0;
+}
+.scheduleCall__name {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+.scheduleCall__sub {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 12px;
+}
+.scheduleCall__vitals {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+.scheduleCall__vitalTile {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 9px;
+  text-align: center;
+}
+.scheduleCall__vitalVal {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+.scheduleCall__vitalLbl {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 10px;
+}
+
+.scheduleCall__flag {
+  background: var(--red-light);
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 11px;
+  color: var(--red);
+  display: inline-block;
+  margin: 3px 3px 0 0;
+}
+
+.scheduleCall__privacyNote {
+  margin: 0 16px 12px;
+  font-size: 11px;
+  color: var(--t3);
+  line-height: 1.6;
+}
+
+.scheduleCall__slots {
+  padding: 0 16px;
+}
+
+.slotRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 13px;
+  border-radius: 12px;
+  border: 0.5px solid var(--border);
+  margin-bottom: 8px;
+  cursor: pointer;
+  background: #fff;
+}
+.slotRow--sel {
+  border-color: var(--teal);
+  background: var(--teal-light);
+}
+.slotRow__iconWrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--teal-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.slotRow__time {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--t1);
+}
+.slotRow__date {
+  font-size: 11px;
+  color: var(--t3);
+}
+.slotRadio {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slotRadio--sel {
+  border-color: var(--teal);
+  background: var(--teal);
+}
+
+@media (min-width: 960px) {
+  .scheduleCall__hero {
+    padding: 20px 24px;
+    border-radius: 18px;
+    margin-bottom: 8px;
+  }
+  .scheduleCall__privacyNote {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .scheduleCall__slots {
+    padding: 0;
+    max-width: 480px;
+  }
+  .primaryBtn {
+    max-width: 480px;
+  }
+}

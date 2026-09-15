@@ -1,0 +1,140 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--teal-dark);
+  padding: 12px 20px 14px;
+  flex-shrink: 0;
+  position: relative;
+  min-height: 60px;
+}
+
+/* Left section - contains back button */
+.topbar__left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-start;
+  min-width: 80px;
+}
+
+/* Center section - contains title */
+.topbar__center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 2;
+  text-align: center;
+}
+
+/* Right section - contains avatar */
+.topbar__right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  min-width: 80px;
+}
+
+.topbar__title {
+  color: #fff;
+  font-family: var(--serif);
+  font-size: 18px;
+  text-align: center;
+}
+
+.topbar__subtitle {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 11px;
+  margin-top: 2px;
+  text-align: center;
+}
+
+.topbar__avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--gold-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--teal-dark);
+  flex-shrink: 0;
+}
+
+.topbar__avatar--clickable {
+  cursor: pointer;
+}
+
+.topbar__back {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: var(--sans);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.topbar__back:hover {
+  color: #fff;
+}
+
+/* For pages with back button (Patient Detail, Protocol Review, etc.) */
+.topbar--withBack .topbar__left {
+  flex: 1;
+}
+
+.topbar--withBack .topbar__center {
+  flex: 3;
+}
+
+.topbar--withBack .topbar__right {
+  flex: 1;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .topbar {
+    padding: 10px 12px 12px;
+    min-height: 50px;
+  }
+
+  .topbar__left {
+    min-width: 60px;
+  }
+
+  .topbar__right {
+    min-width: 60px;
+  }
+
+  .topbar__title {
+    font-size: 15px;
+  }
+
+  .topbar__subtitle {
+    font-size: 10px;
+  }
+
+  .topbar__back {
+    font-size: 13px;
+  }
+
+  .topbar__avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+  }
+}
+
+/* Tablet and desktop */
+@media (min-width: 481px) and (max-width: 959px) {
+  .topbar {
+    padding: 12px 16px 14px;
+  }
+}

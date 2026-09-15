@@ -1,0 +1,4 @@
+/* Intentionally minimal — all real styling lives in
+   src/styles/tokens.css and each component's co-located .css
+   file. This file exists only because Vite's template imports
+   it by default in main.jsx history; kept empty on purpose. */

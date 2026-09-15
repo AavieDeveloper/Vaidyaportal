@@ -1,0 +1,59 @@
+.earnRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 0.5px solid var(--border);
+}
+.earnRow:last-child {
+  border-bottom: none;
+}
+.earnRow__id {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--t1);
+}
+.earnRow__note {
+  font-size: 11px;
+  color: var(--t3);
+}
+.earnRow__amount {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.payoutRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 0.5px solid var(--border);
+}
+.payoutRow__period {
+  font-size: 13px;
+  color: var(--t2);
+}
+
+.earnings__upi {
+  padding-top: 10px;
+}
+.earnings__upiLbl {
+  font-size: 11px;
+  color: var(--t3);
+  margin-bottom: 4px;
+}
+.earnings__upiVal {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--t1);
+}
+
+@media (min-width: 960px) {
+  .earnings__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+}

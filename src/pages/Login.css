@@ -1,0 +1,200 @@
+.loginPage {
+  min-height: 100vh;
+  background: var(--teal-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.loginPage__card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 24px 60px rgba(6, 51, 68, 0.25);
+}
+.loginPage__card--wide {
+  max-width: 560px;
+}
+
+.loginPage__brand {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  color: var(--teal-dark);
+  text-align: center;
+}
+.loginPage__sub {
+  font-size: 12px;
+  color: var(--t3);
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: 28px;
+  font-weight: var(--weight-subtext);
+}
+.loginPage__intro {
+  font-size: 12.5px;
+  color: var(--t2);
+  line-height: 1.6;
+  text-align: center;
+  margin: -16px 0 24px;
+  font-weight: var(--weight-subtext);
+}
+
+.loginPage__form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.loginPage__label {
+  font-size: 12px;
+  font-weight: var(--weight-heading);
+  color: var(--t2);
+  margin-top: 12px;
+  display: block;
+}
+.loginPage__input {
+  border: 0.5px solid var(--border);
+  border-radius: 10px;
+  padding: 11px 13px;
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+  margin-top: 4px;
+}
+.loginPage__input:focus {
+  border-color: var(--teal);
+}
+
+.loginPage__error {
+  color: var(--red);
+  font-size: 12px;
+  margin-top: 10px;
+  font-weight: var(--weight-subtext);
+}
+
+.loginPage__submit {
+  margin-top: 20px;
+  background: var(--teal-dark);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 13px;
+  font-size: 14px;
+  font-weight: var(--weight-heading);
+  cursor: pointer;
+}
+.loginPage__submit:hover {
+  background: var(--teal-mid);
+}
+.loginPage__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* -------- Registration form grid -------- */
+.loginPage__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px 16px;
+}
+.loginPage__field {
+  display: flex;
+  flex-direction: column;
+}
+.loginPage__gridSpan2 {
+  grid-column: 1;
+}
+
+@media (min-width: 520px) {
+  .loginPage__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .loginPage__gridSpan2 {
+    grid-column: span 2;
+  }
+}
+
+/* -------- Footer link (register <-> sign in) -------- */
+.loginPage__footerLink {
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--t3);
+  margin-top: 20px;
+  font-weight: var(--weight-subtext);
+}
+.loginPage__footerLink a {
+  color: var(--teal);
+  font-weight: var(--weight-heading);
+  text-decoration: none;
+}
+.loginPage__footerLink a:hover {
+  text-decoration: underline;
+}
+
+/* -------- Pending Approval status card -------- */
+.pendingStatus {
+  text-align: center;
+  padding: 20px 16px;
+  border-radius: 14px;
+  background: var(--ivory-2);
+}
+.pendingStatus--approved {
+  background: var(--green-light);
+}
+.pendingStatus--denied {
+  background: var(--red-light);
+}
+.pendingStatus__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  font-size: 20px;
+  font-weight: var(--weight-heading);
+  color: var(--gold);
+}
+.pendingStatus--approved .pendingStatus__icon {
+  color: var(--green);
+}
+.pendingStatus--denied .pendingStatus__icon {
+  color: var(--red);
+}
+.pendingStatus__title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--t1);
+  margin-bottom: 8px;
+}
+.pendingStatus__body {
+  font-size: 12.5px;
+  color: var(--t2);
+  line-height: 1.65;
+  font-weight: var(--weight-subtext);
+}
+.pendingStatus__message {
+  text-align: center;
+  font-size: 12px;
+  color: var(--teal-mid);
+  margin-top: 12px;
+  font-weight: var(--weight-subtext);
+}
+.pendingStatus__devApprove {
+  margin-top: 10px;
+  background: none;
+  border: 1px dashed var(--gold);
+  border-radius: 10px;
+  padding: 9px;
+  font-size: 11.5px;
+  color: var(--gold);
+  cursor: pointer;
+  width: 100%;
+}
+.pendingStatus__devApprove:hover {
+  background: var(--gold-light);
+}

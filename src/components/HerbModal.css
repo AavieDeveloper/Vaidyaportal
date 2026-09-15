@@ -1,0 +1,133 @@
+/* searchBar is defined here (not just in Patients.css) so the
+   modal's search input is styled regardless of which page
+   opened it */
+.herbModal__sheet .searchBar {
+  background: #fff;
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--t1);
+  width: 100%;
+  outline: none;
+  display: block;
+  margin-bottom: 10px;
+}
+.herbModal__sheet .searchBar:focus {
+  border-color: var(--teal);
+}
+
+.herbModal__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 51, 68, 0.5);
+  display: flex;
+  align-items: flex-end;
+  z-index: 200;
+}
+
+.herbModal__sheet {
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  padding: 20px 16px 32px;
+  width: 100%;
+  max-height: 75vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.herbModal__handle {
+  width: 36px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  margin: 0 auto 14px;
+}
+
+.herbModal__title {
+  font-family: var(--serif); /* CHANGED: was var(--font-serif) */
+  font-size: 17px;
+  color: var(--t1);
+  margin-bottom: 12px;
+}
+
+.herbModal__content {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.herbModal__empty {
+  padding: 16px 0;
+  text-align: center;
+  font-size: 12px;
+  color: var(--t3);
+}
+
+.herbRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 0.5px solid var(--border);
+  cursor: pointer;
+}
+.herbRow:last-child {
+  border-bottom: none;
+}
+.herbRow:hover {
+  background: var(--ivory-2);
+  margin: 0 -8px;
+  padding: 10px 8px;
+  border-radius: 8px;
+}
+.herbRow__name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--t1);
+}
+.herbRow__sub {
+  font-size: 11px;
+  color: var(--t3);
+}
+
+.herbModal__plus {
+  font-size: 22px;
+  color: var(--teal);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.herbModal__cancel {
+  width: 100%;
+  padding: 12px;
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  background: transparent;
+  font-size: 13px;
+  color: var(--t2);
+  cursor: pointer;
+  margin-top: 12px;
+  flex-shrink: 0;
+}
+.herbModal__cancel:hover {
+  background: var(--ivory-2);
+}
+
+/* Desktop: present as a centered dialog instead of a mobile
+   bottom sheet — same content, more appropriate chrome. */
+@media (min-width: 960px) {
+  .herbModal__overlay {
+    align-items: center;
+    justify-content: center;
+  }
+  .herbModal__sheet {
+    border-radius: 20px;
+    width: 440px;
+    max-height: 70vh;
+    padding: 24px;
+    box-shadow: 0 24px 60px rgba(6, 51, 68, 0.3);
+  }
+  .herbModal__handle {
+    display: none;
+  }
+}
