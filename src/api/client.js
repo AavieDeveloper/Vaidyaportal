@@ -244,9 +244,20 @@ const res = await fetch(`${API_BASE_URL}/api/vaidya/login`, {
 });
 
 // Handle empty response (Render cold start)
-const text = await res.text();
+// Handle empty response (Render cold start) — retry once
+let text = await res.text();
 if (!text || text.trim() === "") {
-  throw new Error("Server is starting up. Please try again in a few seconds.");
+  // Wait 3 seconds and retry once
+  await new Promise(resolve => setTimeout(resolve, 3000));
+  const retryRes = await fetch(`${API_BASE_URL}/api/vaidya/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(credentials),
+  });
+  text = await retryRes.text();
+  if (!text || text.trim() === "") {
+    throw new Error("Server is starting up. Please wait 10 seconds and try again.");
+  }
 }
 
 let data;
