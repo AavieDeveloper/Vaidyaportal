@@ -64,8 +64,8 @@ export default function PatientDetail() {
     <Card>
       <div className="patDetail__muted">Primary · Secondary · Tertiary</div>
       <div className="patDetail__pillRow">
-        {data.prakriti.map((d) => (
-          <span
+                {(data.prakriti ?? []).filter(Boolean).map((d) => (
+          <div
             key={d.dosha}
             className="pkPill"
             style={{
@@ -94,6 +94,7 @@ export default function PatientDetail() {
           <div className="infoCell__key">Ama</div>
         </div>
       </div>
+           {data.vikriti.aggravation && (
       <div style={{ marginTop: 12 }}>
         <div className="patDetail__barRow">
           <span style={{ color: "var(--green)", fontWeight: 500, fontSize: 12 }}>
@@ -110,6 +111,7 @@ export default function PatientDetail() {
           />
         </div>
       </div>
+      )}
     </Card>
   </div>
 
@@ -131,7 +133,7 @@ export default function PatientDetail() {
         Active flags
       </div>
       <div>
-        {data.activeFlags.map((f) => (
+                {(data.activeFlags ?? []).map((f) => (
           <span key={f} className="symptomTag">
             {f}
           </span>

@@ -573,25 +573,26 @@ export async function getPatientDetail(planId) {
           return doshas;
         }
         // Fallback to parsed prakriti string
-        return parsePrakriti(plan.prakriti);
+               return (parsePrakriti(plan.prakriti) ?? []).filter(Boolean);
       })(),
       prakritiStr: plan.prakriti ?? "-",
 
       // Vikriti
-      vikriti: {
+            vikriti: {
         agniState: agniLabels[agni?.toLowerCase()] ?? agni ?? "Sama",
         ama: ama,
-        aggravation: {
-          dosha: plan.ciType?.split("-")[0] ?? "Kapha",
+        aggravation: plan.ciType ? {
+          dosha: plan.ciType.split("-")[0] ?? "Kapha",
           label: `High +2 aggravation`,
           pct: 70,
-        },
+        } : null,
       },
 
       // Flags
       severity: plan.severity ?? "-",
       primaryDriver: herbsJson.primaryDriver ?? plan.ciType ?? "-",
-      activeFlags: activeFlags.length > 0 ? activeFlags : [plan.ciType ?? "CI"],
+            activeFlags: activeFlags.length > 0 ? activeFlags : 
+        (plan.ciType ? [plan.ciType] : []),
 
       // Cycle data
            cycleData: {
