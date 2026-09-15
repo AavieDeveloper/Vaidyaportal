@@ -72,9 +72,9 @@ export default function PatientDetail() {
               background: DOSHA_TONE[d.tone]?.bg,
               color: DOSHA_TONE[d.tone]?.fg,
             }}
-          >
+                   >
             {d.dosha} {d.pct}%
-          </span>
+          </div>
         ))}
       </div>
     </Card>
