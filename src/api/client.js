@@ -243,6 +243,19 @@ const res = await fetch(`${API_BASE_URL}/api/vaidya/login`, {
   body: JSON.stringify(credentials),
 });
 
+// Handle empty response (Render cold start)
+const text = await res.text();
+if (!text || text.trim() === "") {
+  throw new Error("Server is starting up. Please try again in a few seconds.");
+}
+
+let data;
+try {
+  data = JSON.parse(text);
+} catch {
+  throw new Error("Invalid server response. Please try again.");
+}
+
 if (res.status === 403 || res.status === 401) {
   const body = await res.json().catch(() => ({}));
   // Check if pending or rejected
